@@ -14,7 +14,7 @@ const Card = (props) => {
   else if (props.card.properties.color === "RE") classes.push("red");
   classes = classes.join(' ')
   return (<>
-    <div index={props.index} id={props.card.id} className={classes} onClick={props.click}>
+    <div pos={props.pos} index={props.index} id={props.card.id} className={classes} onClick={props.click}>
       <Shape index={props.index} shape={props.card.properties.shape} num={props.card.properties.num} fill={props.card.properties.fill}/>
     </div>
   </>);

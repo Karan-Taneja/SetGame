@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Card from '../components/card';
 import './selection.css';
 
@@ -8,7 +8,7 @@ const Selection = (props) => {
     const indexes = props.indexes;
     let cardsA = [];
     for(let i = 0; i < 3; i++){
-      if(cards.length > i) cardsA.push(<Card index={indexes[i]} card={cards[i]} col="4" key={i} click={props.click}/>)
+      if(cards.length > i) cardsA.push(<Card pos={i} index={indexes[i]} card={cards[i]} col="4" key={i} click={props.click}/>)
       else {
         if(cards.length === i+1) cardsA.push(<Card empty={true} col="4" last={true} key={i}/>)
         else cardsA.push(<Card empty={true} col="4" key={i}/>)

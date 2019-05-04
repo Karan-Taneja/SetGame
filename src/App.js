@@ -15,7 +15,6 @@ import Board from './containers/board';
   KNOWN BUGS:
   1. After a match has been made, replacement cards render improperly
   2. If a selected card is removed, replacement cards render improperly
-  3. Sometimes, you cannot remove a selected card
 |================*/
 
 class App extends Component {
@@ -63,16 +62,11 @@ class App extends Component {
   };
 
   undoChoice = (e) => { //Function to allow user to undo selection by clicking card in selection
-    let i = e.target.getAttribute('index');
+    let pos = parseInt(e.target.getAttribute('pos'));
     let nuSelection = JSON.parse(JSON.stringify(this.state.selection));
     let nuIndexes = JSON.parse(JSON.stringify(this.state.indexes));
-    for(let j = 0; j < nuIndexes.length; j++){
-      if(nuIndexes[j] === i){
-        console.log(nuIndexes[j], i)
-        nuSelection = nuSelection.slice(0, j).concat(nuSelection.slice(j+1))
-        nuIndexes = nuSelection.slice(0, j).concat(nuSelection.slice(j+1));
-      };
-    };
+    nuSelection = nuSelection.slice(0, pos).concat(nuSelection.slice(pos+1));
+    nuIndexes = nuIndexes.slice(0, pos).concat(nuIndexes.slice(pos+1));
     this.setState({selection: nuSelection, indexes: nuIndexes});
   }
 
