@@ -1,0 +1,29 @@
+.half{
+  opacity: 0.5;
+}
+
+.flex-wrap{
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconify{
+  font-size: 5vmin
+}
+
+.large{
+  font-size: 50px;
+}
+
+.rel{
+  position: relative;
+}
+
+.abs{
+  position: absolute;
+}
+
+.below{
+  z-index: 0
+}
