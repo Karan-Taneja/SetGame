@@ -864,6 +864,25 @@
   resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-9.0.1.tgz#c27b391d8457d1e893f1eddeaf5e5412d12ffbb5"
   integrity sha512-6It2EVfGskxZCQhuykrfnALg7oVeiI6KclWSmGDqB0AiInVrTGB9Jp9i4/Ad21u9Jde/voVQz6eFX/eSg/UsPA==
 
+"@iconify/json-tools@^1.0.5":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@iconify/json-tools/-/json-tools-1.0.6.tgz#c06fdbcd8bf010d6e55107376cd0686d02dcbd46"
+  integrity sha512-mBM+Zk1rodeQ+RdpHj4RWFBMErC0YTca5npOlNqJr/6TFjHN5qnY7GYWe4rf/poB6L9BYrJ73irz1hyeLE1CDA==
+
+"@iconify/json@^1.0.100":
+  version "1.0.103"
+  resolved "https://registry.yarnpkg.com/@iconify/json/-/json-1.0.103.tgz#fa53c3d141f4f0e59f23f099cd69b652bf32b2b7"
+  integrity sha512-sjzAxO/OURceODQP1+wja+sso5k77s2SospNOPJ0gna+BvfJA9g54rPNUtgrI/3mQUl/qh5u+B6O0b58cFFK/w==
+
+"@iconify/react@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@iconify/react/-/react-1.0.7.tgz#6576446c15c6f708eeace06a6841cf353f1e0dbd"
+  integrity sha512-kWqg9YGkTjDx4lrqqlVUn6RSUrpMV5I0WNdPA3PcrPPcbzuyW0Gi6WQ/F8hNFPzYpTteGgNFE6F3ceab2abuag==
+  dependencies:
+    "@iconify/json" "^1.0.100"
+    "@iconify/json-tools" "^1.0.5"
+    react "^16.8.3"
+
 "@jest/console@^24.7.1":
   version "24.7.1"
   resolved "https://registry.yarnpkg.com/@jest/console/-/console-24.7.1.tgz#32a9e42535a97aedfe037e725bd67e954b459545"
@@ -7915,7 +7934,7 @@ react-scripts@3.0.0:
   optionalDependencies:
     fsevents "2.0.6"
 
-react@^16.8.6:
+react@^16.8.3, react@^16.8.6:
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/react/-/react-16.8.6.tgz#ad6c3a9614fd3a4e9ef51117f54d888da01f2bbe"
   integrity sha512-pC0uMkhLaHm11ZSJULfOBqV4tIZkx87ZLvbbQYunNixAAvjnC+snJCg0XQXn9VIsttVsbZP/H/ewzgsd5fxKXw==

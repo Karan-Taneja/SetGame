@@ -11,18 +11,11 @@ import Card from './components/card';
 import Selection from './containers/selection';
 import Board from './containers/board';
 
-/*================|
-  KNOWN BUGS:
-  1. After a match has been made, replacement cards render improperly
-  2. If a selected card is removed, replacement cards render improperly
-  3. React DOM Except, something about failing to execute removeChild() on a node. 
-     See Logs for further details
-|================*/
-
 class App extends Component {
 
   state = {
-    game: true, 
+    game: true, //Renders all the cards if false, else, let's you play the game
+    testing: false, //Enables developer get match button
     selection: [], //Selected cards
     indexes: [], //Indexes of selections in the board
     board: [], //Board of 12 cards

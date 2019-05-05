@@ -1,5 +1,5 @@
 ###ERROR - REACT DOMException-00001
-##UNRESOLVED
+##RESOLVED
 #Occurs when submitting a set, seems to occur any time more than 1 set is submitted successfully.
 #Also Occurs when removing center selected card, and left most card while there are 3 elements selected.
 react-dom.development.js:9279 Uncaught DOMException: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.
@@ -92,4 +92,20 @@ react-dom.development.js:21333 Uncaught DOMException: Failed to execute 'removeC
     at interactiveUpdates$1 (http://localhost:3000/static/js/1.chunk.js:26644:11)
     at interactiveUpdates (http://localhost:3000/static/js/1.chunk.js:7380:14)
     at dispatchInteractiveEvent (http://localhost:3000/static/js/1.chunk.js:10198:7)
-###END OF ERROR REACT DOMException-00001
+###END OF ERROR REACT DOMException-00001 LOG
+##START OF ERROR REACT DOMException-00001 Notes
+
+#KNOWN BUGS:
+  1. After a match has been made, replacement cards render improperly [X]
+  2. If a selected card is removed, replacement cards render improperly [X]
+  3. React DOM Except, something about failing to execute removeChild() on a node. 
+     See Logs for further details. On further testing, seems to be caused by Iconify. [X]
+
+#POSSIBLE SOLUTIONS:
+  1. Do all the work in app.js instead of in SELECTION and BOARD [ ]
+  2. Create custom font including all possible Shapes instead of SVG [ ]
+  3. When the game mounts, generate all possible cards and display them instead of [ ] 
+     having it render as it goes.
+  4. Switch over from Iconify HTML to Iconify for React [X]
+
+##END OF ERROR REACT DOMException-00001 Notes
