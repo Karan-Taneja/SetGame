@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 //======Functions
-import { shuffleDeck, dealCards, checkForMatches, deck, devGetMatches } from './services/game';
+import { shuffleDeck, dealCards, checkForMatches, deck, oDeck, devGetMatches } from './services/game';
 
 //======Components
 import Card from './components/card';
@@ -134,7 +134,7 @@ class App extends Component {
   render(){
     if(this.state.game === false) return( //If game state is false, renders all the cards
       <div className="d-flex wrap">
-      {this.state.deck.map((e, i) => {
+      {oDeck.map((e, i) => {
         return <Card index={i} id={e.id} card={e} col="2" key={i}/>
       })};
       </div>)

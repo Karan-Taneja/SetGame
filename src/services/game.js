@@ -97,7 +97,7 @@ const devGetMatches = (cards) => { //Function for testing purposes to get a matc
 };
 
 const shuffleDeck = (deck) => { //Given a deck, shuffles it
-  let tempDeck = [...deck]
+  let tempDeck = JSON.parse(JSON.stringify(deck));
   for (let i = tempDeck.length - 1; i > 0; i--){
     let j = Math.floor(Math.random() * (i + 1));
     let temp = tempDeck[i];
@@ -113,6 +113,7 @@ const dealCards = (n, deck) => { //Given a deck, returns an array with n cards
   return deal;
 }
 
-let deck = shuffleDeck(generateAllMatches(generateAllCards()));
+let oDeck = generateAllMatches(generateAllCards());
+let deck = shuffleDeck(oDeck)
 
-export { shuffleDeck, dealCards, checkForMatches, deck, devGetMatches };
+export { shuffleDeck, dealCards, checkForMatches, deck, oDeck, devGetMatches };

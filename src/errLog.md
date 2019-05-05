@@ -1,6 +1,7 @@
 ###ERROR - REACT DOMException-00001
 ##UNRESOLVED
 #Occurs when submitting a set, seems to occur any time more than 1 set is submitted successfully.
+#Also Occurs when removing center selected card, and left most card while there are 3 elements selected.
 react-dom.development.js:9279 Uncaught DOMException: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.
     at removeChild (http://localhost:3000/static/js/1.chunk.js:14391:22)
     at unmountHostComponents (http://localhost:3000/static/js/1.chunk.js:23810:13)
