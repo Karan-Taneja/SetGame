@@ -15,6 +15,8 @@ import Board from './containers/board';
   KNOWN BUGS:
   1. After a match has been made, replacement cards render improperly
   2. If a selected card is removed, replacement cards render improperly
+  3. React DOM Except, something about failing to execute removeChild() on a node. 
+     See Logs for further details
 |================*/
 
 class App extends Component {

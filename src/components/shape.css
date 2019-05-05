@@ -23,9 +23,6 @@
   z-index: 0
 }
 
-/* <span class="icon-twotone-rhombus"><span class="path1"></span><span class="path2"></span></span> */
-/* <span class="icon-twotone-circle"><span class="path1"></span><span class="path2"></span></span> */
-
 .icon-twotone-circle .path1:before {
   content: "\e900";
   opacity: 0.4;
