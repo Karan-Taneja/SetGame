@@ -1,5 +1,3 @@
-import HTMLCard from '../components/card';
-
 const generateAllCards = () => {
 
   const nums = ['ON', 'TW', 'TH']; //ONE, TWO, THREE
