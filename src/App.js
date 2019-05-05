@@ -140,7 +140,8 @@ class App extends Component {
       </div>
       {this.state.error.length > 0 ? <div className="error-box mt-3">{this.state.error}</div> : <></>}
       <div className="d-flex center mt-3">
-        <div className="button mg-r" onClick={this.devHax}>Matches</div>
+
+        {this.state.testing ? <div className="button mg-r" onClick={this.devHax}>Matches</div> : <></>}
         <div className="button red-button mg-r" name="no-set" onClick={this.handleSubmit}>No Set</div>
         <div className="button green-button" name="submit" onClick={this.handleSubmit}>Submit</div>
       </div>
