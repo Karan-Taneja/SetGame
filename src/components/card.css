@@ -19,6 +19,16 @@
   padding-right: 0px;
 }
 
+.flex-wrap{
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-spread{
+  justify-content: space-between;
+}
+
 .red{
   color: #DB3069;
 }

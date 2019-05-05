@@ -63,10 +63,15 @@ class App extends Component {
 
   undoChoice = (e) => { //Function to allow user to undo selection by clicking card in selection
     let pos = parseInt(e.target.getAttribute('pos'));
+    console.log(pos)
     let nuSelection = JSON.parse(JSON.stringify(this.state.selection));
+    console.log(nuSelection[pos])
     let nuIndexes = JSON.parse(JSON.stringify(this.state.indexes));
+    console.log(nuIndexes[[pos]])
     nuSelection = nuSelection.slice(0, pos).concat(nuSelection.slice(pos+1));
+    console.log(this.state.selection, nuSelection)
     nuIndexes = nuIndexes.slice(0, pos).concat(nuIndexes.slice(pos+1));
+    console.log(this.state.indexes, nuIndexes)
     this.setState({selection: nuSelection, indexes: nuIndexes});
   }
 
@@ -131,7 +136,7 @@ class App extends Component {
         return <Card index={i} id={e.id} card={e} col="2" key={i}/>
       })};
       </div>)
-    else return (<>{console.log('rendering board')}
+    else return (<>
       <div className="flex" style={{'width': '100%', 'textAlign':'center'}}>
         <h1>Score: {this.state.score}</h1>
       </div>

@@ -8,14 +8,25 @@ const Card = (props) => {
     else return (<div className="card col-4"></div>)
   }
   let classes = ['card', `col-${props.col}`,]
+  let color;
+  let num;
   if(props.card.properties.last) classes.push('last-card')
-  if(props.card.properties.color === "OR") classes.push("orange");
-  else if (props.card.properties.color === "BL") classes.push("blue");
-  else if (props.card.properties.color === "RE") classes.push("red");
+  if(props.card.properties.color === "OR") color="orange";
+  else if (props.card.properties.color === "BL") color="blue";
+  else if (props.card.properties.color === "RE") color="red";
   classes = classes.join(' ')
+  if(props.card.properties.num === "ON") num=1;
+  else if (props.card.properties.num === "TW") num=2;
+  else if (props.card.properties.num === "TH") num=3;
+
+  const shapes = [];
+  for(let i = 0; i < num; i++) shapes.push(<Shape color={color} index={props.index} card={props.card} key={i}/>);
+
   return (<>
     <div pos={props.pos} index={props.index} id={props.card.id} className={classes} onClick={props.click}>
-      <Shape index={props.index} shape={props.card.properties.shape} num={props.card.properties.num} fill={props.card.properties.fill}/>
+      <div className="d-flex flex-wrap">
+        {shapes}
+      </div>
     </div>
   </>);
 };

@@ -2,12 +2,6 @@
   opacity: 0.5;
 }
 
-.flex-wrap{
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
 .iconify{
   font-size: 5vmin
 }
@@ -17,7 +11,8 @@
 }
 
 .rel{
-  position: relative;
+  display: flex;
+  padding-right: 3px;
 }
 
 .abs{
@@ -26,4 +21,24 @@
 
 .below{
   z-index: 0
+}
+
+/* <span class="icon-twotone-rhombus"><span class="path1"></span><span class="path2"></span></span> */
+/* <span class="icon-twotone-circle"><span class="path1"></span><span class="path2"></span></span> */
+
+.icon-twotone-circle .path1:before {
+  content: "\e900";
+  opacity: 0.4;
+}
+.icon-twotone-circle .path2:before {
+  content: "\e901";
+  margin-left: -1em;
+}
+.icon-twotone-rhombus .path1:before {
+  content: "\e902";
+  opacity: 0.4;
+}
+.icon-twotone-rhombus .path2:before {
+  content: "\e903";
+  margin-left: -1em;
 }
