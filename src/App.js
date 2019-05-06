@@ -40,13 +40,9 @@ class App extends Component {
     devGetMatches(this.state.board);
   }
 
-  handleChoice = (e) => { //Function to handle selection of a card
-    if(this.state.selection.length === 3) return;
-    const i = e.target.getAttribute('index');
-    if(!i) return;
+  handleChoice = (i) => (e) => { //Function to handle selection of a card
     if(this.state.indexes.includes(i)) this.setState({error:'You already picked that card'});
     else{
-     if(typeof this.state.board[e.target.getAttribute('index')] === 'undefined') return;      
       const nuSelection = JSON.parse(JSON.stringify(this.state.selection));
       const nuIndexes = JSON.parse(JSON.stringify(this.state.indexes));
       const board = this.state.board;
@@ -56,17 +52,11 @@ class App extends Component {
     }
   };
 
-  undoChoice = (e) => { //Function to allow user to undo selection by clicking card in selection
-    let pos = parseInt(e.target.getAttribute('pos'));
-    console.log(pos)
+  undoChoice = (pos) => (e) => { //Function to allow user to undo selection by clicking card in selection
     let nuSelection = JSON.parse(JSON.stringify(this.state.selection));
-    console.log(nuSelection[pos])
     let nuIndexes = JSON.parse(JSON.stringify(this.state.indexes));
-    console.log(nuIndexes[[pos]])
     nuSelection = nuSelection.slice(0, pos).concat(nuSelection.slice(pos+1));
-    console.log(this.state.selection, nuSelection)
     nuIndexes = nuIndexes.slice(0, pos).concat(nuIndexes.slice(pos+1));
-    console.log(this.state.indexes, nuIndexes)
     this.setState({selection: nuSelection, indexes: nuIndexes});
   }
 

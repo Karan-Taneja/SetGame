@@ -5,18 +5,20 @@ import './selection.css';
 const Selection = (props) => {
     if(!props.cards) return(<></>)
     const cards = props.cards;
-    const indexes = props.indexes;
     let cardsA = [];
     for(let i = 0; i < 3; i++){
-      if(cards.length > i) cardsA.push(<Card pos={i} index={indexes[i]} card={cards[i]} col="4" key={i} click={props.click}/>)
+      if(cards[i]){
+        if(i === 2) cardsA.push(<Card pos={i} card={cards[i]} col="2" key={i} last={true} click={props.click(i)}/>);
+        else cardsA.push(<Card pos={i} card={cards[i]} col="2" key={i} click={props.click(i)}/>)
+      }
       else {
-        if(cards.length === i+1) cardsA.push(<Card empty={true} col="4" last={true} key={i}/>)
-        else cardsA.push(<Card empty={true} col="4" key={i}/>)
+        if(i === 2) cardsA.push(<Card empty={true} col="2" last={true} key={i}/>)
+        else cardsA.push(<Card empty={true} col="2" key={i}/>)
       }
     };
     return(<>
     <div className="d-flex center mt-2" style={{'width': '100%'}}>
-      <div className="d-flex" style={{'width': '50%'}}>
+      <div className="d-flex center" style={{'width': '100%'}}>
         {cardsA}
       </div>
     </div>

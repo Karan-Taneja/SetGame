@@ -1,11 +1,11 @@
 import React from 'react';
 
 //Components
+import Wrapper from './wrapper';
 import HalfCircle from '../assets/twotone-circle.js';
 import HalfRhombus from '../assets/twotone-rhombus.js';
 
 //Iconify Components
-
 import { Icon } from '@iconify/react';
 
 //Circle
@@ -21,68 +21,33 @@ import starOutline from '@iconify/react/ant-design/star-outline';
 import starTwotone from '@iconify/react/ant-design/star-twotone';
 import starFill from '@iconify/react/ant-design/star-fill';
 
-
 //CSS
 import './shape.css';
 
 const Shape = (props) => {
-
   const symbols = {
     FU: {
-      ST: (<div className={props.color} index={props.index}>
-        <span index={props.index} className="iconify" data-icon="ant-design:star-fill" data-inline="false">
-          <Icon icon={starFill} />
-        </span>
-      </div>),
-      DM: (<div className={props.color} index={props.index}>
-        <span index={props.index} className="iconify" data-icon="mdi:rhombus" data-inline="false">
-          <Icon icon={rhombusIcon} />
-        </span>
-      </div>),
-      CR: (<div className={props.color} index={props.index}>
-        <span index={props.index} className="iconify" data-icon="emojione-monotone:red-circle" data-inline="false">
-          <Icon icon={redCircle} />
-        </span>
-      </div>),
+      ST: <Icon icon={starFill} />, DM: <Icon icon={rhombusIcon} />,
+      CR: <Icon icon={redCircle} />,
     },
-    HA: {
-      ST: (<div className={props.color} index={props.index}>
-        <span index={props.index} className="iconify">
-          <Icon icon={starTwotone} />
-        </span>
-      </div>),
-      DM: (<div className={props.color} index={props.index}>
-        <span>
-          <HalfRhombus index={props.index} data-inline="false"/>
-        </span>
-       </div>),
-      CR: (<div className={props.color} index={props.index}>
-        <span>
-          <HalfCircle index={props.index} data-inline="false"/>
-        </span>
-      </div>),
+    HA:{
+      ST: <Icon icon={starTwotone} />, DM: <HalfRhombus />,
+      CR: <HalfCircle />,
     },
     EM: {
-      ST:(<div className={props.color} index={props.index}>
-        <span index={props.index} className="iconify" data-icon="ant-design:star-outline" data-inline="false">
-          <Icon icon={starOutline} />
-        </span>
-      </div>),
-      DM:(<div className={props.color} index={props.index}>
-        <span index={props.index} className="iconify">
-          <Icon icon={rhombusOutline} />
-        </span>
-      </div>),
-      CR:(<div className={props.color} index={props.index}>
-        <span index={props.index} className="iconify">
-          <Icon icon={circleIcon} />
-        </span>
-      </div>),
+      ST: <Icon icon={starOutline} />, DM:<Icon icon={rhombusOutline} />,
+      CR: <Icon icon={circleIcon} />,
     }
   }
   const card = props.card;
   const sym = symbols[card.properties.fill][card.properties.shape]
-  return <div>{sym}</div>;
+  return (<>
+    <div>
+      <Wrapper color={props.color}>
+        {sym}
+      </Wrapper>
+    </div>
+  </>);
 }
 
 export default Shape;

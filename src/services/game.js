@@ -26,14 +26,15 @@ const generateAllCards = () => {
 const checkForMatch = (cards) => { //Checks a given array for matches
   const nums = {}, colors={}, fills={}, shapes={};
   for(let i = 0; i < cards.length; i++){
-      if(!nums[cards[i].num]) nums[cards[i].num] = 1;
-      else nums[cards[i].num]++
-      if(!colors[cards[i].color]) colors[cards[i].color] = 1;
-      else colors[cards[i].color]++
-      if(!fills[cards[i].fill]) fills[cards[i].fill] = 1;
-      else fills[cards[i].fill]++
-      if(!shapes[cards[i].shape]) shapes[cards[i].shape] = 1;
-      else shapes[cards[i].shape]++
+      const c = cards[i];
+      if(!nums[c.num]) nums[c.num] = 1;
+      else nums[c.num]++
+      if(!colors[c.color]) colors[c.color] = 1;
+      else colors[c.color]++
+      if(!fills[c.fill]) fills[c.fill] = 1;
+      else fills[c.fill]++
+      if(!shapes[c.shape]) shapes[c.shape] = 1;
+      else shapes[c.shape]++
   };
   const numsA = Object.keys(nums);
   if(numsA.length === 2) return false;

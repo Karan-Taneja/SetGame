@@ -16,7 +16,7 @@
 }
 
 .last-card{
-  padding-right: 0px;
+  margin-right: 0px;
 }
 
 .flex-wrap{
@@ -30,13 +30,14 @@
 }
 
 .red{
-  color: #DB3069;
+  color: #EE5A63;
 }
 
 .blue{
-  color: #1446A0;
+  color: #2C7FB8;
 }
 
 .orange{
-  color: #F15025;
+  color: #F39C3F;
 }
+

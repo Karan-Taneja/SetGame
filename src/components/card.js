@@ -4,13 +4,13 @@ import Shape from './shape';
 
 const Card = (props) => {
   if(props.empty) {
-    if (props.last) return (<div className="card last-card col-4"></div>)
-    else return (<div className="card col-4"></div>)
+    if (props.last) return (<div className={`card last-card col-${props.col}`}></div>)
+    else return (<div className={`card col-${props.col}`}></div>)
   }
   let classes = ['card', `col-${props.col}`,]
   let color;
   let num;
-  if(props.card.properties.last) classes.push('last-card')
+  if(props.last) classes.push('last-card')
   if(props.card.properties.color === "OR") color="orange";
   else if (props.card.properties.color === "BL") color="blue";
   else if (props.card.properties.color === "RE") color="red";
@@ -20,10 +20,10 @@ const Card = (props) => {
   else if (props.card.properties.num === "TH") num=3;
 
   const shapes = [];
-  for(let i = 0; i < num; i++) shapes.push(<Shape color={color} index={props.index} card={props.card} key={i}/>);
+  for(let i = 0; i < num; i++) shapes.push(<Shape color={color} card={props.card} key={i}/>);
 
   return (<>
-    <div pos={props.pos} index={props.index} id={props.card.id} className={classes} onClick={props.click}>
+    <div id={props.card.id} className={classes} onClick={props.click}>
       <div className="d-flex flex-wrap">
         {shapes}
       </div>
