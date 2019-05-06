@@ -2,8 +2,7 @@ import React from 'react';
 
 //Components
 import Wrapper from './wrapper';
-import HalfCircle from '../assets/twotone-circle.js';
-import HalfRhombus from '../assets/twotone-rhombus.js';
+import CustomShape from './customShape';
 
 //Iconify Components
 import { Icon } from '@iconify/react';
@@ -31,8 +30,8 @@ const Shape = (props) => {
       CR: <Icon icon={redCircle} />,
     },
     HA:{
-      ST: <Icon icon={starTwotone} />, DM: <HalfRhombus />,
-      CR: <HalfCircle />,
+      ST: <Icon icon={starTwotone} />, DM: <CustomShape icon={'icon-twotone-rhombus'}/>,
+      CR: <CustomShape icon={'icon-twotone-circle'}/>,
     },
     EM: {
       ST: <Icon icon={starOutline} />, DM:<Icon icon={rhombusOutline} />,

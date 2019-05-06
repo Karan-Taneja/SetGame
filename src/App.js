@@ -14,7 +14,6 @@ import Board from './containers/board';
 class App extends Component {
 
   state = {
-    game: true, //Renders all the cards if false, else, let's you play the game
     testing: false, //Enables developer get match button
     selection: [], //Selected cards
     indexes: [], //Indexes of selections in the board
@@ -115,13 +114,7 @@ class App extends Component {
   };
 
   render(){
-    if(this.state.game === false) return( //If game state is false, renders all the cards
-      <div className="d-flex wrap">
-      {oDeck.map((e, i) => {
-        return <Card index={i} id={e.id} card={e} col="2" key={i}/>
-      })};
-      </div>)
-    else return (<>
+    return (<>
       <div className="flex" style={{'width': '100%', 'textAlign':'center'}}>
         <h1>Score: {this.state.score}</h1>
       </div>

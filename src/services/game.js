@@ -1,24 +1,22 @@
 const generateAllCards = () => {
-
   const nums = ['ON', 'TW', 'TH']; //ONE, TWO, THREE
   const fills = ['EM', 'HA', 'FU']; //EMPTY, HALF, FULL
   const colors = ['RE', 'BL', 'OR']; //RED, BLUE, ORANGE
   const shapes = ['ST', 'DM', 'CR']; //STAR, DIAMOND, CIRCLE
   const results = [];
-
   for(let num of nums){
-      for(let fill of fills){
-          for(let color of colors){
-              for(let shape of shapes){
-                  const card = { 
-                      id: `${num}-${fill}-${color}-${shape}`,
-                      properties: { num, fill, color, shape },
-                      matches: {},
-                  };
-                  results.push(card);
-              };
+    for(let fill of fills){
+      for(let color of colors){
+        for(let shape of shapes){
+          const card = { 
+            id: `${num}-${fill}-${color}-${shape}`,
+            properties: { num, fill, color, shape },
+            matches: {},
           };
+          results.push(card);
+        };
       };
+    };
   };
   return results;
 };
@@ -36,33 +34,29 @@ const checkForMatch = (cards) => { //Checks a given array for matches
       if(!shapes[c.shape]) shapes[c.shape] = 1;
       else shapes[c.shape]++
   };
-  const numsA = Object.keys(nums);
-  if(numsA.length === 2) return false;
-  const colorsA = Object.keys(colors);
-  if(colorsA.length === 2) return false;
-  const fillsA = Object.keys(fills);
-  if(fillsA.length === 2) return false;
-  const shapesA = Object.keys(shapes);
-  if(shapesA.length === 2) return false;
-  return true;
+  const numsL = Object.keys(nums).length;
+  const colorsL = Object.keys(colors).length;
+  const fillsL = Object.keys(fills).length;
+  const shapesL = Object.keys(shapes).length;
+  return (numsL !== 2 && colorsL !== 2 && fillsL !== 2 && shapesL !== 2);
 };
 
-const generateAllMatches = (cards) => { //Give cards, generates all possible matches for each card
+const generateAllMatches = (cards) => { //Given cards, generates all possible matches for each card
   for(let i = 0; i < cards.length; i++){
-      for(let j = 0; j < cards.length; j++){
-        if(cards[j].id === cards[i].id) continue;
-        else {
-          cards[i].matches[cards[j].id] = {};
-          const jMatches = cards[i].matches[cards[j].id];
-          for(let k = 0; k < cards.length; k++){
-            if(cards[k].id === cards[j].id || cards[k].id === cards[i].id) continue;
-            else {
-              let cardA = [cards[i].properties, cards[j].properties, cards[k].properties];
-              let ev = checkForMatch(cardA);
-              if(ev) jMatches[cards[k].id] = cards[k].id
-            };
+    for(let j = 0; j < cards.length; j++){
+      if(cards[j].id === cards[i].id) continue;
+      else {
+        cards[i].matches[cards[j].id] = {};
+        const jMatches = cards[i].matches[cards[j].id];
+        for(let k = 0; k < cards.length; k++){
+          if(cards[k].id === cards[j].id || cards[k].id === cards[i].id) continue;
+          else {
+            let cardA = [cards[i].properties, cards[j].properties, cards[k].properties];
+            let ev = checkForMatch(cardA);
+            if(ev) jMatches[cards[k].id] = cards[k].id
           };
-          cards[i].matches[cards[j].id] = jMatches;
+        };
+        cards[i].matches[cards[j].id] = jMatches;
       };
     };
   };
