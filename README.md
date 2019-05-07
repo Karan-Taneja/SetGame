@@ -39,6 +39,7 @@ Once you have selected your three cards, simply hit the 'submit' button and one 
 It is possible that will be a board of cards where there is no set. If you believe this to be the case you may press the 'no set' button and one of two things will happen:
 
   1. There is no set present so you will get a point and a new board will be generated.
+  
   2. There is a set, you will not get a point and the app will display a messaging informing you of such.
 
 # **Planned Features**
