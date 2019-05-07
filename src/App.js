@@ -22,6 +22,8 @@ class App extends Component {
     score: 0, //Player's score
     setExists: null, //If there is a set or not
     error: '', //Error message to display to user
+    theme: 'dark', //Determines whether the them is dark or light.
+    disableNoSet: false,
   };
 
   componentDidMount(){ //Initializes
@@ -42,15 +44,25 @@ class App extends Component {
   handleChoice = (i) => (e) => { //Function to handle selection of a card
     if(this.state.indexes.includes(i)) this.setState({error:'You already picked that card'});
     else{
-      if(this.state.selection.length === 3) return;
       const nuSelection = JSON.parse(JSON.stringify(this.state.selection));
       const nuIndexes = JSON.parse(JSON.stringify(this.state.indexes));
       const board = this.state.board;
-      nuIndexes.push(i);
-      nuSelection.push(board[i]);
+      if(this.state.selection.length === 3){
+        nuIndexes[2] = i;
+        nuSelection[2] = board[i];
+      }
+      else{
+        nuIndexes.push(i);
+        nuSelection.push(board[i]);
+      }
       this.setState({selection: nuSelection, indexes: nuIndexes, error:''});
     };
   };
+
+  toggleTheme = (e) => {
+    if(this.state.theme === 'dark') this.setState({theme: 'light'});
+    else this.setState({theme: 'dark'});
+  }
 
   undoChoice = (pos) => (e) => { //Function to allow user to undo selection by clicking card in selection
     let nuSelection = JSON.parse(JSON.stringify(this.state.selection));
@@ -85,6 +97,7 @@ class App extends Component {
             error: '',
             setExists: exists,
             score: nuScore,
+            disableNoSet: false,
           });
         }
         else{
@@ -93,7 +106,7 @@ class App extends Component {
       };
     }
     else if(e.target.getAttribute('name') === "no-set"){
-      if(this.state.setExists) this.setState({error:'There is a set'})
+      if(this.state.setExists) this.setState({error:'There is a set', disableNoSet: true})
       else {
         let nuScore = this.state.score + 1;
         let nuDeck;
@@ -115,24 +128,36 @@ class App extends Component {
   };
 
   render(){
-    return (<>
+    return (<div className={`max ${this.state.theme}`}>
+        <div className="onoffswitch" onChange={this.toggleTheme}>
+          {
+            this.state.theme !== 'dark' ? 
+            <input type="checkbox" name="onoffswitch" className="onoffswitch-checkbox" id="myonoffswitch" checked/>
+            :
+            <input type="checkbox" name="onoffswitch" className="onoffswitch-checkbox" id="myonoffswitch" />
+          }
+          <label className="onoffswitch-label" for="myonoffswitch">
+            <span className="onoffswitch-inner"></span>
+            <span className="onoffswitch-switch"></span>
+          </label>
+        </div>
       <div className="flex" style={{'width': '100%', 'textAlign':'center'}}>
         <h1>Score: {this.state.score}</h1>
       </div>
       <div className="container-fluid d-flex">
-        <Selection cards={this.state.selection} indexes={this.state.indexes} click={this.undoChoice}/>
+        <Selection cards={this.state.selection} theme={this.state.theme} indexes={this.state.indexes} click={this.undoChoice}/>
       </div>
       {this.state.error.length > 0 ? <div className="error-box mt-3">{this.state.error}</div> : <></>}
       <div className="d-flex center mt-3">
 
         {this.state.testing ? <div className="button mg-r" onClick={this.devHax}>Matches</div> : <></>}
-        <div className="button red-button mg-r" name="no-set" onClick={this.handleSubmit}>No Set</div>
+        {this.state.disableNoSet ? <></> : <div className="button red-button mg-r" name="no-set" onClick={this.handleSubmit}>No Set</div>}
         <div className="button green-button" name="submit" onClick={this.handleSubmit}>Submit</div>
       </div>
       <div className="container-fluid">
-        <Board cards={this.state.board} click={this.handleChoice}/>
+        <Board cards={this.state.board} theme={this.state.theme} click={this.handleChoice}/>
       </div>
-    </>);
+    </div>);
   }
 };
 

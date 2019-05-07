@@ -4,10 +4,10 @@ import Shape from './shape';
 
 const Card = (props) => {
   if(props.empty) {
-    if (props.last) return (<div className={`card last-card col-${props.col}`}></div>)
-    else return (<div className={`card col-${props.col}`}></div>)
+    if (props.last) return (<div className={`card ${props.theme} last-card col-${props.col}`}></div>)
+    else return (<div className={`card ${props.theme} col-${props.col}`}></div>)
   }
-  let classes = ['card', `col-${props.col}`,]
+  let classes = ['card', props.theme,`col-${props.col}`,]
   let color;
   let num;
   if(props.last) classes.push('last-card')

@@ -8,12 +8,12 @@ const Selection = (props) => {
     let cardsA = [];
     for(let i = 0; i < 3; i++){
       if(cards[i]){
-        if(i === 2) cardsA.push(<Card pos={i} card={cards[i]} col="2" key={i} last={true} click={props.click(i)}/>);
-        else cardsA.push(<Card pos={i} card={cards[i]} col="2" key={i} click={props.click(i)}/>)
+        if(i === 2) cardsA.push(<Card pos={i} card={cards[i]} theme={props.theme} col="2" key={i} last={true} click={props.click(i)}/>);
+        else cardsA.push(<Card pos={i} card={cards[i]} theme={props.theme} col="2" key={i} click={props.click(i)}/>)
       }
       else {
-        if(i === 2) cardsA.push(<Card empty={true} col="2" last={true} key={i}/>)
-        else cardsA.push(<Card empty={true} col="2" key={i}/>)
+        if(i === 2) cardsA.push(<Card empty={true} theme={props.theme} col="2" last={true} key={i}/>)
+        else cardsA.push(<Card empty={true} theme={props.theme} col="2" key={i}/>)
       }
     };
     return(<>
