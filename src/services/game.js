@@ -1,7 +1,7 @@
 const generateAllCards = () => {
   const nums = ['ON', 'TW', 'TH']; //ONE, TWO, THREE
   const fills = ['EM', 'HA', 'FU']; //EMPTY, HALF, FULL
-  const colors = ['RE', 'BL', 'OR']; //RED, BLUE, ORANGE
+  const colors = ['RE', 'BL', 'GR']; //RED, BLUE, GREEN
   const shapes = ['ST', 'DM', 'CR']; //STAR, DIAMOND, CIRCLE
   const results = [];
   for(let num of nums){

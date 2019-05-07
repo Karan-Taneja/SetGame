@@ -42,13 +42,14 @@ class App extends Component {
   handleChoice = (i) => (e) => { //Function to handle selection of a card
     if(this.state.indexes.includes(i)) this.setState({error:'You already picked that card'});
     else{
+      if(this.state.selection.length === 3) return;
       const nuSelection = JSON.parse(JSON.stringify(this.state.selection));
       const nuIndexes = JSON.parse(JSON.stringify(this.state.indexes));
       const board = this.state.board;
       nuIndexes.push(i);
       nuSelection.push(board[i]);
       this.setState({selection: nuSelection, indexes: nuIndexes, error:''});
-    }
+    };
   };
 
   undoChoice = (pos) => (e) => { //Function to allow user to undo selection by clicking card in selection

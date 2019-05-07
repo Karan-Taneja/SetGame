@@ -11,7 +11,7 @@ const Card = (props) => {
   let color;
   let num;
   if(props.last) classes.push('last-card')
-  if(props.card.properties.color === "OR") color="orange";
+  if(props.card.properties.color === "GR") color="green";
   else if (props.card.properties.color === "BL") color="blue";
   else if (props.card.properties.color === "RE") color="red";
   classes = classes.join(' ')
