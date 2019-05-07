@@ -5,7 +5,7 @@
 <img src="./src/assets/setlogo.svg" width=300px/>
 </div>
 
-# <h1 style="text-align: center">**[SET](https://setgame.netlify.com)**</h1>
+# >**[SET](https://setgame.netlify.com)**
 
 *An implementation of the card game <a href="https://en.wikipedia.org/wiki/Set_(card_game)">'SET'</a> made using React, Bootstrap, CSS and Javascript.*
 
