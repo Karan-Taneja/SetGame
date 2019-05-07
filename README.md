@@ -2,7 +2,8 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/719db664-2369-4c76-b84a-a20820faeb39/deploy-status)](https://app.netlify.com/sites/setgame/deploys)
 
 <img src="./src/assets/setlogo.svg" width=300px/>
-# **[SET](https://setgame.netlify.com)**
+
+# **<a href="https://setgame.netlify.com">SET</a>**
 
 *An implementation of the card game <a href="https://en.wikipedia.org/wiki/Set_(card_game)">'SET'</a> made using React, Bootstrap, CSS and Javascript.*
 
