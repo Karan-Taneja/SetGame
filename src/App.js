@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 //======Functions
-import { shuffleDeck, dealCards, checkForMatches, deck, oDeck, devGetMatches } from './services/game';
-
-//======Components
-import Card from './components/card';
+import { shuffleDeck, dealCards, checkForMatches, deck, devGetMatches } from './services/game';
 
 //======Containers
 import Selection from './containers/selection';
@@ -23,7 +20,7 @@ class App extends Component {
     setExists: null, //If there is a set or not
     error: '', //Error message to display to user
     theme: 'dark', //Determines whether the them is dark or light.
-    disableNoSet: false,
+    disableNoSet: false, //Determines whether or not to display the 'No set button'
   };
 
   componentDidMount(){ //Initializes
@@ -128,7 +125,7 @@ class App extends Component {
   };
 
   render(){
-    return (<div className={`max ${this.state.theme}`}>
+    return (<div className={`${this.state.theme}`} style={{'min-height': '100vh'}}>
         <div className="onoffswitch" onChange={this.toggleTheme}>
           {
             this.state.theme !== 'dark' ? 
