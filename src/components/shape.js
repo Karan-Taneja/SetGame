@@ -17,7 +17,6 @@ import rhombusIcon from '@iconify/react/mdi/rhombus';
 
 //Stars
 import starOutline from '@iconify/react/ant-design/star-outline';
-import starTwotone from '@iconify/react/ant-design/star-twotone';
 import starFill from '@iconify/react/ant-design/star-fill';
 
 //CSS
@@ -30,8 +29,8 @@ const Shape = (props) => {
       CR: <Icon icon={redCircle} />,
     },
     HA:{
-      ST: <Icon icon={starTwotone} />, DM: <CustomShape icon={'icon-twotone-rhombus'}/>,
-      CR: <CustomShape icon={'icon-twotone-circle'}/>,
+      ST: <CustomShape icon={'icon-half_Star'} />, DM: <CustomShape icon={'icon-half_Diamond'}/>,
+      CR: <CustomShape icon={'icon-half_Circle'}/>,
     },
     EM: {
       ST: <Icon icon={starOutline} />, DM:<Icon icon={rhombusOutline} />,

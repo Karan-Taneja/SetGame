@@ -23,20 +23,14 @@
   z-index: 0
 }
 
-.icon-twotone-circle .path1:before {
+.icon-half_Circle:before {
   content: "\e900";
-  opacity: 0.4;
-}
-.icon-twotone-circle .path2:before {
-  content: "\e901";
-  margin-left: -1em;
-}
-.icon-twotone-rhombus .path1:before {
-  content: "\e902";
-  opacity: 0.4;
-}
-.icon-twotone-rhombus .path2:before {
-  content: "\e903";
-  margin-left: -1em;
 }
 
+.icon-half_Diamond:before {
+  content: "\e901";
+}
+
+.icon-half_Star:before {
+  content: "\e902";
+}
