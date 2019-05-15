@@ -1,4 +1,5 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/42388835c250029e4251/maintainability)](https://codeclimate.com/github/Karan-Taneja/SetGame/maintainability)
+![Dependencies](https://david-dm.org/Karan-Taneja/SetGame.svg)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/719db664-2369-4c76-b84a-a20820faeb39/deploy-status)](https://app.netlify.com/sites/setgame/deploys)
 
 <img src="./src/assets/setlogo.svg" width=300px/>
