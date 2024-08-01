@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@iconify/react": "^1.0.7",
-    "bootstrap": "^4.3.1",
+    "bootstrap": "^5.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.0"
